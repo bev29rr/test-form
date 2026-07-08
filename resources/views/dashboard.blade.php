@@ -16,7 +16,7 @@
                     <div class="flex-1 flex flex-col gap-2.5 min-w-0 justify-center">
                         @if(count($posts) > 0)
                             @foreach($posts as $post)
-                                <a href="/posts" class="group block p-2.5 rounded-lg border border-neutral-100 dark:border-neutral-800/60 bg-neutral-50/50 dark:bg-neutral-950/40 hover:bg-neutral-50 dark:hover:bg-neutral-950 hover:border-neutral-200 dark:hover:border-neutral-800 transition-all min-w-0">
+                                <a href="{{ route('posts.show', $post['id']) }}" class="group block p-2.5 rounded-lg border border-neutral-100 dark:border-neutral-800/60 bg-neutral-50/50 dark:bg-neutral-950/40 hover:bg-neutral-50 dark:hover:bg-neutral-950 hover:border-neutral-200 dark:hover:border-neutral-800 transition-all min-w-0">
                                     <h3 class="font-medium text-xs text-neutral-800 dark:text-neutral-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 line-clamp-1 transition-colors">
                                         {{ $post['title'] }}
                                     </h3>
