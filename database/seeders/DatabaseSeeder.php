@@ -33,8 +33,9 @@ class DatabaseSeeder extends Seeder
             ->has(Post::factory(45)->recycle($posts))
             ->create([
             'name' => 'admin',
-            'password' => @password_hash('admin123', PASSWORD_DEFAULT),
-            'email' => 'admin@example.com'
+            'password' => password_hash('admin123', PASSWORD_DEFAULT),
+            'email' => 'admin@example.com',
+            'is_admin' => true
         ]);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\UserSearchController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,7 +12,9 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('dashboard', 'dashboard')->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
+
+// Route::middleware(['auth'])->get('/users/searchAll', [UserSearchController::class, 'searchAll']);
 
 require __DIR__.'/settings.php';
